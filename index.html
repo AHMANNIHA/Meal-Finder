@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Finder</title>
+    <link rel="shortcut icon" href=".\img\chef-hat.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/stylem.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+  <nav class="navbar">
+    <div class="nav-center">
+      <div class="nav-header">
+        <a href="index.html" class="nav-logo">
+          <img src="img\logo.png" alt="Meal Finder">
+        </a>
+        <button class="nav-btn btn">
+          <i class="fas fa-align-justify"></i>
+        </button>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link"> home </a>
+        <a href="about.html" class="nav-link"> about </a>
+        <a href="tags.html" class="nav-link"> tags </a>
+        <a href="recipes.html" class="nav-link"> recipes </a>
+        <div class="nav-link contact-link">
+          <a href="contact.html" class="btn"> Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h2> Its too good to throw </h2>
+        <h5> Taste the Food and Enjoy! </h5>
+      </div>
+    </div>
+  </header>
+    <div class="container">
+      <div class="flex">
+        <form class="flex" id="submit">
+          <input
+            type="text"
+            id="search"
+            placeholder="Search for meals or keywords"
+          />
+          <button class="search-btn" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <button class="random-btn" id="random">
+          <i class="fas fa-random"></i>
+        </button>
+      </div>
+       <div class="nutritious-meal-container">
+        <h5></h5>
+        <form class="nutritionForm" id="nutritionForm">
+          <div>
+          <label for="minFat">Min Fat (g):</label>
+          <input type="number" id="minFat" name="minFat" min="0" >
+          <label for="maxFat">Max Fat (g):</label>
+          <input type="number" id="maxFat" name="maxFat" min="0" >
+         </div>
+         <div>
+          <label for="minCarbs">Min Carbs (g):</label>
+          <input type="number" id="minCarbs" name="minCarbs" min="0" >
+          <label for="maxCarbs">Max Carbs (g):</label>
+          <input type="number" id="maxCarbs" name="maxCarbs" min="0" >
+          </div>
+          <div>
+          <label for="minSugar">Min Sugar (g):</label>
+          <input type="number" id="minSugar" name="minSugar" min="0" >
+          <label for="maxSugar">Max Sugar (g):</label>
+          <input type="number" id="maxSugar" name="maxSugar" min="0" >
+          </div>
+          <button id="n-search-btn" type="submit">Search</button>
+        </form>
+       </div>
+      <div id="result-heading"></div>
+      <div id="meals" class="meals"></div>
+      <div id="nutrition-meals" class="meals"></div>
+      <div id="single-meal"></div>
+    </div>
+    <script src="js/scripts.js"></script>
+    <main>
+    <article id="pudding" class="card">
+      <div class="image"></div>
+      <div class="recipe">
+          <h2>Malva Pudding</h2>
+          <div class="time">
+              <div class="prep">
+                  <img src="img/spoons.png" alt="prep time">
+                  <p class="time-details"><strong>Prep Time:</strong> 40 Min</p>
+              </div>
+              <div class="cook">
+                  <img src="img/steam.png" alt="cook time">
+                  <p class="time-details"><strong>Cook Time:</strong> 30 Min</p>
+              </div>
+              <div class="total">
+                  <img src="img/clock.png" alt="total time">
+                  <p class="time-details"><strong>Total Time:</strong> 1 H 10 Min</p>
+              </div>
+          </div>
+          <p class="description">A sweet decadent South African 
+            dessert with a caramelized exterior and spongy interior soaked in tasty 
+            warm butter. Maybe you need a dessert to add to your repertoire that 
+            you can serve for your African theme party. Maybe you desire a dessert 
+            that is rich and sinfully delicious.</p>
+          <div class="columns">
+              <section class="ingredients">
+                  <h3>Ingredients</h3>
+                  <ul>
+                    <li>6 1/2 ounces sugar</li>
+                    <li>2 large eggs</li>
+                    <li>1 tablespoon apricot jam</li>
+                    <li>5 ounces all-purpose flour</li>
+                    <li>1 teaspoon baking soda</li>
+                    <li>1/2 teaspoon salt</li>
+                    <li>1 tablespoon butter</li>
+                    <li>1 teaspoon vinegar</li>
+                    <li>1/3 cup milk</li>
+                    <li>3/4 cup fresh cream</li>
+                  </ul>
+              </section>
+              <section class="directions">
+                  <h3>Directions</h3>
+                  <ol>
+                    <li>Preheat oven to 350&deg; F/180&deg; Celsius.</li>
+                    <li>Grease an oven dish.</li>
+                    <li>Beat or whip the sugar and eggs.</li>
+                    <li>Melt the butter (don't boil) and add the butter and vinegar to the wet mixture.</li>
+                    <li>Sieve, or simply mix together: the flour, soda and salt.</li>
+                    <li>Add this mixture with the milk to the egg mixture in the processor or mixing bowl. 
+                      Beat well.</li>
+                  </ol>
+              </section>
+          </div>
+      </div>
+  </article>
+  <article id="pancake" class="card">
+    <div class="image"></div>
+    <div class="recipe">
+        <h2>Pancake Mix</h2>
+        <div class="time">
+            <div class="prep">
+                <img src="img/spoons.png" alt="prep time">
+                <p class="time-details"><strong>Prep Time:</strong> 15 Min</p>
+            </div>
+            <div class="cook">
+                <img src="img/steam.png" alt="cook time">
+                <p class="time-details"><strong>Cook Time:</strong> 5 Min</p>
+            </div>
+            <div class="total">
+                <img src="img/clock.png" alt="total time">
+                <p class="time-details"><strong>Total Time:</strong> 20 Min</p>
+            </div>
+        </div>
+        <p class="description">Delicious treat while at a friends house for a week-long stay. The best part 
+          about this recipe is you can make it ahead of time, then prepare it however you prefer. Enjoy!</p>
+        <div class="columns">
+            <section class="ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                  <li>4 cups rolled oats</li>
+                  <li>4 cups wheat flour</li>
+                  <li>3/4 cup brown sugar</li>
+                  <li>1/2 flax seed</li>
+                  <li>3 tbsp. baking powder</li>
+                  <li>2 tbsp. cinnamon</li>
+                  <li>3 tsp. salt</li>
+                </ul>
+            </section>
+            <section class="directions">
+                <h3>Directions</h3>
+                <ol>
+                  <li>Mix all ingredients</li>
+                  <li>Store in an airtight container or use right away.</li>
+                  <li>When ready to use, add milk, eggs, and oil as preferred to make a thick but pourable consistency.</li>
+                  <li>Using a greased or oiled skillet, cook pancakes to desired doneness.</li>
+                  <li>Enjoy!</li>
+                </ol>
+            </section>
+        </div>
+    </div>
+</article>
+<article id="omelette" class="card">
+        <div class="image"></div>
+        <div class="recipe">
+            <h2>Ros Omelette</h2>
+            <div class="time">
+                <div class="prep">
+                    <img src="img/spoons.png" alt="prep time">
+                    <p class="time-details"><strong>Prep Time:</strong> 10 Min</p>
+                </div>
+                <div class="cook">
+                    <img src="img/steam.png" alt="cook time">
+                    <p class="time-details"><strong>Cook Time:</strong> 10 Min</p>
+                </div>
+                <div class="total">
+                    <img src="img/clock.png" alt="total time">
+                    <p class="time-details"><strong>Total Time:</strong> 20 Min</p>
+                </div>
+            </div>
+            <p class="description">Ros Omelette is one of the popular street foods in Goa. Usually sold on 
+              gaadas (Local stalls) which serve chicken or mutton gravy served with omelette, onion, lime and 
+              Pao (Goan local bread).</p>
+            <div class="columns">
+                <section class="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>1 tbsp oil</li>
+                        <li>1 chopped onion</li>
+                        <li>1 chopped tomato</li>
+                        <li>1 tsp ginger garlic paste</li>
+                        <li>1 tsp turmeric powder</li>
+                        <li>1 tsp chilli powder</li>
+                        <li>salt</li>
+                    </ul>
+                </section>
+                <section class="directions">
+                    <h3>Directions</h3>
+                    <ol>
+                      <li>To make the gravy firstly take some Oil then add Ginger-Garlic paste, Coriander, Onion and Tomato. Let the Onion and Tomato settle in and cook until it softens.</li>
+                      <li>Add Red Chilli powder, Garam Masala, Salt to Taste and mix it well. Then put some Turmeric powder and Water as required into the pan.</li>
+                      <li>Add Thick Coconut Milk to it and let it cook.</li>
+                    </ol>
+                </section>
+            </div>
+        </div>
+    </article>
+    <article id="oatmeal" class="card">
+        <div class="image"></div>
+        <div class="recipe">
+            <h2>Baked Oatmeal</h2>
+            <div class="time">
+                <div class="prep">
+                    <img src="img/spoons.png" alt="prep time">
+                    <p class="time-details"><strong>Prep Time:</strong> 5.0 Min</p>
+                </div>
+                <div class="cook">
+                    <img src="img/steam.png" alt="cook time">
+                    <p class="time-details"><strong>Cook Time:</strong> None</p>
+                </div>
+                <div class="total">
+                    <img src="img/clock.png" alt="total time">
+                    <p class="time-details"><strong>Total Time:</strong> 5 Min</p>
+                </div>
+            </div>
+            <p class="description"> Baked oatmeal is so easy to make and is one of the favorite Saturday morning treats.</p>
+            <div class="columns">
+                <section class="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>1 cup packed basil leaves</li>
+                        <li>1 chopped garlic clove</li>
+                        <li>1/4 cup grated parmesan cheese</li>
+                        <li>1/2 tablespoon lemon juice</li>
+                        <li>Pinch of salt</li>
+                        <li>1/4 cup olive oil</li>
+                    </ul>
+                </section>
+                <section class="directions">
+                    <h3>Directions</h3>
+                    <ol>
+                      <li>Mix oats, brown sugar, cinnamon, baking powder, salt.</li>
+                      <li>Beat in milk, eggs, melted butter, and vanilla extract.</li>
+                      <li>Stir in dried cranberries.</li>
+                      <li>Spread into a 9x13 baking dish</li>
+                      <li>Bake in a 350deg pre-heated oven for 40 min.</li>
+                      <li>Serve with milk for a different take on this classic.</li>
+                </section>
+            </div>
+        </div>
+    </article>
+    <article id="molasses" class="card">
+        <div class="image"></div>
+        <div class="recipe">
+            <h2>Molasses Cookies</h2>
+            <div class="time">
+                <div class="prep">
+                    <img src="img/spoons.png" alt="prep time">
+                    <p class="time-details"><strong>Prep Time:</strong> 15 Min</p>
+                </div>
+                <div class="cook">
+                    <img src="img/steam.png" alt="cook time">
+                    <p class="time-details"><strong>Cook Time:</strong> None</p>
+                </div>
+                <div class="total">
+                    <img src="img/clock.png" alt="total time">
+                    <p class="time-details"><strong>Total Time:</strong> 15 Min</p>
+                </div>
+            </div>
+            <p class="description">Often confused with ginger snaps, molasses cookies are distinct in that when cooked right, should have a 
+              slightly gooey center.</p>
+            <div class="columns">
+                <section class="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>1 seedless watermelon</li>
+                        <li>1/3 cup extra virgin olive oil</li>
+                        <li>2 tablespoons fresh lemon juice</li>
+                        <li>1 tablespoon honey</li>
+                        <li>2 teaspoons salt</li>
+                        <li>2 cups feta cheese, crumbled</li>
+                        <li>1 cup red onion, sliced</li>
+                        <li>1/4 cup basil leaves, chopped</li>
+                    </ul>
+                </section>
+                <section class="directions">
+                    <h3>Directions</h3>
+                    <ol>
+                      <li>Melt shortening over medium heat in a small saucepan. Cool.</li>
+                      <li>Add sugar, molasses, and egg. Beat well.</li>
+                      <li>Add all dry ingredients. Mix well.</li>
+                      <li>Chill for 1 hour.</li>
+                      <li>Form into 1&quot; balls and roll each in a small bowl of sugar.</li>
+                      <li>Place on ungreased cookie sheet.</li>
+                      <li>Bake in a 375deg oven for 8-10 minutes.</li>
+                      <li>If not consuming right away, place in an airtight container with a piece of white bread to help retain moisture.</li>
+                    </ol>
+                </section>
+            </div>
+        </div>
+    </article>
+  <article id="bebinka" class="card">
+    <div class="image"></div>
+    <div class="recipe">
+        <h2>Bebinka</h2>
+        <div class="time">
+            <div class="prep">
+                <img src="img/spoons.png" alt="prep time">
+                <p class="time-details"><strong>Prep Time:</strong> 10 Min</p>
+            </div>
+            <div class="cook">
+                <img src="img/steam.png" alt="cook time">
+                <p class="time-details"><strong>Cook Time:</strong> 10 Min</p>
+            </div>
+            <div class="total">
+                <img src="img/clock.png" alt="total time">
+                <p class="time-details"><strong>Total Time:</strong> 20 Min</p>
+            </div>
+        </div>
+        <p class="description">Bebinca or bibik is a pudding like Goan dessert with layers of cake made with coconut milk, eggs, butter and 
+          flour. Traditional Bebinca has about seven to sixteen layers but you can have as many as you wish. It requires time and patience to 
+          cook this delicious dessert, but the end result would be worth all of it and you won't be able resist this sugar delight!</p>
+        <div class="columns">
+            <section class="ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>2 1/2 cups gluten-free flour</li>
+                    <li>1 cup almond flour</li>
+                    <li>1/4 teaspoon salt</li>
+                    <li>1/2 teaspoon baking powder</li>
+                    <li>1/4 teaspoon baking soda</li>
+                    <li>1/2 cup softened, unsalted butter</li>
+                    <li>1 cup sugar</li>
+                    <li>2 teaspoons vanilla extract</li>
+                    <li>1 egg</li>
+                </ul>
+            </section>
+            <section class="directions">
+                <h3>Directions</h3>
+                <ol>
+                  <li>Mix the coconut milk, flour, sugar, nutmeg and the egg yolks and make a batter.</li>
+                  <li>Grease an oven proof dish with a spoonful of melted butter, pour 75 ml of batter into the dish and spread evenly.</li>
+                  <li>Bake till golden brown.</li>
+                  <li>Spread another spoonful of butter and pour another 75 ml of batter over it and spread evenly.</li>
+                </ol>
+            </section>
+        </div>
+    </div>
+</article>
+  <article id="cookies" class="card">
+          <div class="image"></div>
+          <div class="recipe">
+              <h2>Gluten-Free Sugar Cookies</h2>
+              <div class="time">
+                  <div class="prep">
+                      <img src="img/spoons.png" alt="prep time">
+                      <p class="time-details"><strong>Prep Time:</strong> 10 Min</p>
+                  </div>
+                  <div class="cook">
+                      <img src="img/steam.png" alt="cook time">
+                      <p class="time-details"><strong>Cook Time:</strong> 10 Min</p>
+                  </div>
+                  <div class="total">
+                      <img src="img/clock.png" alt="total time">
+                      <p class="time-details"><strong>Total Time:</strong> 20 Min</p>
+                  </div>
+              </div>
+              <p class="description">These buttery sweet cookies have a soft vanilla flavor, a crisp exterior, 
+                and a soft and chewy middle, just like any good gluten free sugar cookie should have.These 
+                buttery cookies have a tender texture and crispy exterior that you are sure to love!</p>
+              <div class="columns">
+                  <section class="ingredients">
+                      <h3>Ingredients</h3>
+                      <ul>
+                          <li>2 1/2 cups gluten-free flour</li>
+                          <li>1 cup almond flour</li>
+                          <li>1/4 teaspoon salt</li>
+                          <li>1/2 teaspoon baking powder</li>
+                          <li>1/4 teaspoon baking soda</li>
+                          <li>1/2 cup softened, unsalted butter</li>
+                          <li>1 cup sugar</li>
+                          <li>2 teaspoons vanilla extract</li>
+                          <li>1 egg</li>
+                      </ul>
+                  </section>
+                  <section class="directions">
+                      <h3>Directions</h3>
+                      <ol>
+                          <li>Preheat oven to 350&deg; F. Line baking sheets with parchment paper.</li>
+                          <li>Add flour, salt, baking soda, and baking powder to a bowl and stir.</li>
+                          <li>In another bowl, beat butter and sugar together.</li>
+                          <li>Add egg and vanilla extract to the butter and sugar mixture.</li>
+                          <li>Combine the wet and dry ingredients in a bowl. Stir until fully combined.</li> 
+                      </ol>
+                  </section>
+              </div>
+          </div>
+      </article>
+      <article id="pesto" class="card">
+          <div class="image"></div>
+          <div class="recipe">
+              <h2>Nut-Free Basil Pesto</h2>
+              <div class="time">
+                  <div class="prep">
+                      <img src="img/spoons.png" alt="prep time">
+                      <p class="time-details"><strong>Prep Time:</strong> 5.0 Min</p>
+                  </div>
+                  <div class="cook">
+                      <img src="img/steam.png" alt="cook time">
+                      <p class="time-details"><strong>Cook Time:</strong> None</p>
+                  </div>
+                  <div class="total">
+                      <img src="img/clock.png" alt="total time">
+                      <p class="time-details"><strong>Total Time:</strong> 5 Min</p>
+                  </div>
+              </div>
+              <p class="description"> Whipped up bright and flavorful basil pesto that does not use pine nuts so
+                 that everyone get can enjoy it.This gorgeous pesto is full of color and flavor! Serve on your 
+                 favorite pasta or crackers for a delicious, healthy meal.</p>
+              <div class="columns">
+                  <section class="ingredients">
+                      <h3>Ingredients</h3>
+                      <ul>
+                          <li>1 cup packed basil leaves</li>
+                          <li>1 chopped garlic clove</li>
+                          <li>1/4 cup grated parmesan cheese</li>
+                          <li>1/2 tablespoon lemon juice</li>
+                          <li>Pinch of salt</li>
+                          <li>1/4 cup olive oil</li>
+                      </ul>
+                  </section>
+                  <section class="directions">
+                      <h3>Directions</h3>
+                      <ol>
+                          <li>In a food processor, pulse garlic and basil together.</li>
+                          <li>Add parmesan cheese, lemon juice, and salt. Pulse again.</li>
+                          <li>Add olive oil and blend. If the mixture is too thick, add more oil or hot water to
+                              thin.</li>
+                      </ol>
+                  </section>
+              </div>
+          </div>
+      </article>
+      <article id="salad" class="card">
+          <div class="image"></div>
+          <div class="recipe">
+              <h2>Watermelon Salad</h2>
+              <div class="time">
+                  <div class="prep">
+                      <img src="img/spoons.png" alt="prep time">
+                      <p class="time-details"><strong>Prep Time:</strong> 15 Min</p>
+                  </div>
+                  <div class="cook">
+                      <img src="img/steam.png" alt="cook time">
+                      <p class="time-details"><strong>Cook Time:</strong> None</p>
+                  </div>
+                  <div class="total">
+                      <img src="img/clock.png" alt="total time">
+                      <p class="time-details"><strong>Total Time:</strong> 15 Min</p>
+                  </div>
+              </div>
+              <p class="description">Sweet watermelon garnished with toasted almonds, mint, sliced red onion, 
+                 and a sweet basil ginger dressing.This salad combines juicy watermelon, tangy lemon juice, 
+                 savory feta cheese, and sweet honey into one delicious bowl. Serve right away on a hot summer
+                 day for a cooling treat!</p>
+              <div class="columns">
+                  <section class="ingredients">
+                      <h3>Ingredients</h3>
+                      <ul>
+                          <li>1 seedless watermelon</li>
+                          <li>1/3 cup extra virgin olive oil</li>
+                          <li>2 tablespoons fresh lemon juice</li>
+                          <li>1 tablespoon honey</li>
+                          <li>2 teaspoons salt</li>
+                          <li>2 cups feta cheese, crumbled</li>
+                          <li>1 cup red onion, sliced</li>
+                          <li>1/4 cup basil leaves, chopped</li>
+                      </ul>
+                  </section>
+                  <section class="directions">
+                      <h3>Directions</h3>
+                      <ol>
+                          <li>Cube watermelon, or use a melon baller to scoop chunks of watermelon. Place in a
+                              large bowl.</li>
+                          <li>In a separate bowl, combine the olive oil, lemon juice, honey, and salt.</li>
+                          <li>Add feta cheese, basil, and red onions to the mixture.</li>
+                          <li>Pour the mixture over the watermelon.</li>
+                          <li>Toss watermelon with the mixture and serve immediately!</li>
+                      </ol>
+                  </section>
+              </div>
+          </div>
+      </article>
+    </article>
+    <article id="recommendations" class="card">
+    <section class="recipes-container">
+      <div class="tags-container">
+        <h4>recipes</h4>
+        <div class="tags-list">
+          <a href="breakfast.html">Breakfast (2)</a>
+          <a href="chicken.html">Chicken (1)</a>
+          <a href="beef.html">Beef (3)</a>
+          <a href="vegetarian.html">Vegetarian (5)</a>
+          <a href="salads.html">Salad (1)</a>
+        </div>
+      </div>
+       <div class="recipes-list">
+        <a href="soup.html" class="recipe">
+          <img src="assets/recipes/soup.jpeg" class="img recipe-img" alt="" />
+          <h5>Vegetable Soup</h5>
+          <p>Prep : 15 min | Cook : 5 min</p>
+        </a>
+        <a href="ribs.html" class="recipe">
+          <img src="assets/recipes/ribs.jpeg" class="img recipe-img" alt="" />
+          <h5>Greek Ribs</h5>
+          <p>Prep : 15 min | Cook : 5 min</p>
+        </a>
+        <a href="carne.html" class="recipe">
+          <img src="assets/recipes/carne.jpeg" class="img recipe-img" alt="" />
+          <h5>Carne Asada</h5>
+          <p>Prep : 15 min | Cook : 5 min</p>
+        </a>
+        <a href="pancakes.html" class="recipe">
+          <img src="assets/recipes/pancake.jpeg" class="img recipe-img" alt="" />
+          <img src="img/Pancake Mix.jpg" class="img recipe-img" alt="" />
+          <h5>Banana Pancakes</h5>
+          <p>Prep : 15 min | Cook : 5 min</p>
+        </a>
+        <a href="rice.html" class="recipe">
+          <img src="assets/recipes/chicken.jpg" class="img recipe-img" alt="" />
+          <h5> Barberry Rice with Chicken </h5>
+          <p> Prep: 20 min | Cook: 1 h </p>
+        </a>
+        <a href="stew.html" class="recipe">
+          <img src="assets/recipes/stew.jpg" class="img recipe-img" alt="" />
+          <h5> Herb Stew </h5>
+          <p> Prep: 20 min | Cook: 2 h 45 min </p>
+        </a>
+        <a href="cake.html" class="recipe">
+          <img src="assets/recipes/rice.jpg" class="img recipe-img" alt="" />
+          <img src="assets/recipes/cake.webp" class="img recipe-img" alt="" />
+          <h5> Rice Cake </h5>
+          <p> Prep: 20 min | Cook: 1 h </p>
+        </a>
+        <a href="omelet.html" class="recipe">
+          <img src="assets/recipes/omelet.JPG" class="img recipe-img" alt="" />
+          <h5> Tomato Omelet </h5>
+          <p> Prep: 10 min | Cook: 20 min </p>
+        </a>
+        <a href="salad.html" class="recipe">
+          <img src="assets/recipes/salad.jpg" class="img recipe-img" alt="" />
+          <h5> Cucumber Tomato Salad </h5>
+          <p> Prep: 10 min </p>
+        </a>
+      </div>
+    </section>
+    </article>
+  </main>
+  <footer class="page-footer">
+    <p> &copy;
+      <span id="date"></span>
+      <span class="footer-logo"> Meal Finder </span>
+    </p>
+  </footer>
+  <script src="js/scriptm.js"></script>
+  </body>
+</html>
